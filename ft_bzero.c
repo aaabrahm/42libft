@@ -6,13 +6,13 @@
 /*   By: owatanab <owatanab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/21 17:39:32 by owatanab          #+#    #+#             */
-/*   Updated: 2023/06/22 13:52:09 by owatanab         ###   ########.fr       */
+/*   Updated: 2023/06/25 13:52:53 by owatanab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, unsigned n)
+void	ft_bzero(void *s, size_t n)
 {
 	int		i;
 	char	*a;

@@ -6,32 +6,41 @@
 /*   By: owatanab <owatanab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 12:09:18 by owatanab          #+#    #+#             */
-/*   Updated: 2023/06/22 13:51:02 by owatanab         ###   ########.fr       */
+/*   Updated: 2023/06/25 16:43:40 by owatanab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include libft.h
+#include "libft.h"
 
 int	ft_atoi(char *str)
 {
-	int i;
-	int j;
+	int				i;
+	unsigned long	j;
+	int				k;
 
 	i = 1;
 	j = 0;
+	k = 0;
 	while (*str == ' ' || (9 <= *str && *str <= 13))
 		str++;
-	while (*str == '-' || *str == '+')
-	{
-		if (*str == '-')
-			i = -i;
+	if (*str == '-' || *str == '+')
+		i -= *str++ - '+';
+	while (*str == 0)
 		str++;
-	}
-	while (*str <= '9' && *str >= '0')
+	while (str[k] <= '9' && str[k] >= '0')
 	{
+		if ((j > 922337203685477580) || (j == 922337203685477580 && ((i == 1
+						&& str[k] > '7') || (i == -1 && str[k] > '8'))))
+			return ((-i - 1) / 2);
 		j *= 10;
-		j += *str - '0';
-		str++;
+		j += str[k++] - '0';
 	}
-	return (j * i);
+	return ((int)j * i);
 }
+
+// int	main(void)
+// {
+// 	printf("%d%d\n", ft_atoi("9223372036854775808"),
+// 			atoi("9223372036854775808"));
+// 	printf("%d", ft_atoi("-+1"));
+// }

@@ -6,17 +6,17 @@
 /*   By: owatanab <owatanab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 11:23:46 by owatanab          #+#    #+#             */
-/*   Updated: 2023/06/22 13:52:47 by owatanab         ###   ########.fr       */
+/*   Updated: 2023/06/25 13:23:29 by owatanab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, unsigned n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	unsigned char	*t1;
 	unsigned char	*t2;
-	unsigned		i;
+	size_t			i;
 
 	i = -1;
 	t1 = (unsigned char *)s1;

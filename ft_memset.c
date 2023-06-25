@@ -6,13 +6,13 @@
 /*   By: owatanab <owatanab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 19:41:46 by owatanab          #+#    #+#             */
-/*   Updated: 2023/06/22 13:53:00 by owatanab         ###   ########.fr       */
+/*   Updated: 2023/06/25 13:27:34 by owatanab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *b, int c, unsigned len)
+void	*ft_memset(void *b, int c, size_t len)
 {
 	unsigned char	uc;
 	unsigned char	*p;

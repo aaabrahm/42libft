@@ -6,48 +6,35 @@
 /*   By: owatanab <owatanab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/21 18:40:14 by owatanab          #+#    #+#             */
-/*   Updated: 2023/06/22 13:53:28 by owatanab         ###   ########.fr       */
+/*   Updated: 2023/06/25 15:56:40 by owatanab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	get_size(char *dest)
+size_t	ft_strlcat(char *restrict dest, const char *restrict src, size_t size)
 {
-	int	i;
-
-	i = 0;
-	while (dest[i] != 0)
-	{
-		i++;
-	}
-	return (i);
-}
-
-unsigned int	ft_strlcat(char *restrict dest, const char *restrict src,
-		unsigned int size)
-{
-	unsigned int	i;
-	unsigned int	j;
+	size_t	i;
+	size_t	j;
 
 	j = 0;
-	i = get_size((char *)dest);
+	i = ft_strlen((char *)dest);
 	if (i >= size)
-		return (size + get_size((char *)src));
+		return (size + ft_strlen((char *)src));
 	while (src[j] != 0 && i + j + 1 < size)
 	{
 		dest[i + j] = src[j];
 		j++;
 	}
 	dest[i + j] = 0;
-	return (i + get_size((char *)src));
+	return (i + ft_strlen((char *)src));
 }
 
 // #include <stdio.h>
 
 // int	main(void)
 // {
-// 	char s[] = "ssddd";
 // 	char t[] = "almlc";
-// 	printf("%d%s", ft_strlcat(s, t, 10), s);
+// 	printf("%zu", ft_strlcat(NULL, t, 10));
+// 	printf("aaaa");
 // }

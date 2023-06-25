@@ -6,20 +6,20 @@
 /*   By: owatanab <owatanab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 10:55:02 by owatanab          #+#    #+#             */
-/*   Updated: 2023/06/22 13:52:43 by owatanab         ###   ########.fr       */
+/*   Updated: 2023/06/25 13:21:23 by owatanab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, unsigned n)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
 	unsigned char	*t;
-	unsigned		i;
+	size_t			i;
 
 	i = 0;
 	t = (unsigned char *)s;
-	while (i < n)
+	while (i++ < n)
 	{
 		if ((unsigned char)c == *t)
 			return (t);
@@ -36,6 +36,6 @@ void	*ft_memchr(const void *s, int c, unsigned n)
 // 	char s[20];
 // 	strcpy(s, "gsfgsg");
 // 	printf("%s\n", s + 9);
-// 	printf("%s\n", ft_memchr(s, 'j', 20));
-// 	printf("%s", memchr(s, 'j', 20));
+// 	printf("%s\n", ft_memchr(s, 'g', 20));
+// 	printf("%s", memchr(s, 'g', 20));
 // }

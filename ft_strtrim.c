@@ -6,51 +6,44 @@
 /*   By: owatanab <owatanab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 13:34:52 by owatanab          #+#    #+#             */
-/*   Updated: 2023/06/22 14:53:26 by owatanab         ###   ########.fr       */
+/*   Updated: 2023/06/25 19:48:07 by owatanab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include "libft.h"
-
-static int	malloc_size(char const *s, char const *t, int i);
-{
-	int c;
-
-	c = 0;
-	while (ft_strnstr(s, t, i))
-	{
-		s = ft_strnstr + 1;
-		c++;
-	}
-	return (i - c * ft_strlen(t));
-}
+#include "libft.h"
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	char	*p;
-	char	*q;
 	int		i;
+	int		j;
+	char	*start;
+	char	*f;
+	char	*q;
 
-	i = ft_strlen(s1);
-	p = calloc(1 + malloc_size(s1, set, i));
-	q = ft_strnstr(s1, set, i);
-	if (p)
+	i = 0;
+	while (s1[i] == set[i] && set[i])
+		i++;
+	start = (char *)s1;
+	if (set[i] == 0)
+		start += i;
+	i = ft_strlen(set);
+	j = ft_strlen(s1);
+	f = (char *)s1 + j;
+	while (j >= 0 && i >= 0 && set[i--] == s1[j])
+		j--;
+	if (i == -1)
 	{
-		while (q)
-		{
-			ft_strlcat(p, s1, q - s1 + 1);
-			s1 = q + ft_strlen(set);
-			q = ft_strnstr(s1, q, i);
-		}
+		f -= ft_strlen(set);
 	}
-	return (p);
+	i = 0;
+	q = ft_calloc(f - start + 1, 1);
+	if (q)
+		ft_strlcat(q, start, f - start + 1);
+	return (q);
 }
 
-#include <stdio.h>
-#include <stdlib.h>
-
-int	main(void)
-{
-	char s[] = "aijsousfbvibdhuh";
-	printf("%s", ft_strtrim(s, "so"));
-}
+// int	main(void)
+// {
+// 	// char s[] = "aaissssoooopp";
+// 	printf("%s", ft_strtrim("hello world", "world"));
+// }

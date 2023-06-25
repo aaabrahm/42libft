@@ -6,25 +6,29 @@
 /*   By: owatanab <owatanab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 12:36:17 by owatanab          #+#    #+#             */
-/*   Updated: 2023/06/22 13:54:18 by owatanab         ###   ########.fr       */
+/*   Updated: 2023/06/25 18:27:03 by owatanab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned start, unsigned len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*p;
-	int		i;
+	size_t	i;
 
-	i = 0;
-	while (s[i])
-		i++;
-	if (len > i - start)
-		len = i - start;
+	i = ft_strlen(s);
+	if (i < start)
+		len = 0;
+	else if (len > i - (size_t)start)
+		len = i - (size_t)start;
 	p = malloc(len + 1);
-	while (len--)
-		p[len] = s[len];
+	if (p)
+	{
+		p[len] = 0;
+		while (len--)
+			p[len] = s[start + len];
+	}
 	return (p);
 }
 
@@ -32,5 +36,6 @@ char	*ft_substr(char const *s, unsigned start, unsigned len)
 
 // int	main(void)
 // {
-// 	printf("%s", ft_substr("hello", 2, 2));
+// 	char *s = "libft-test-tokyo";
+// 	printf("%s", ft_substr(s, 5, 100));
 // }

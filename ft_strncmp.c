@@ -6,30 +6,32 @@
 /*   By: owatanab <owatanab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 10:52:03 by owatanab          #+#    #+#             */
-/*   Updated: 2023/06/22 13:54:00 by owatanab         ###   ########.fr       */
+/*   Updated: 2023/06/25 17:50:01 by owatanab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, unsigned int n)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	long	i;
+	size_t			i;
+	unsigned char	*t1;
+	unsigned char	*t2;
 
+	t1 = (unsigned char *)s1;
+	t2 = (unsigned char *)s2;
 	i = 0;
-	while ((s1[i] != 0 || s2[i] != 0) && (unsigned int)i < n)
+	while ((t1[i] != 0 || t2[i] != 0) && i < n)
 	{
-		if (s1[i] != s2[i])
-		{
-			return (s1[i] - s2[i]);
-		}
+		if (t1[i] != t2[i])
+			return ((int)t1[i] - (int)t2[i]);
 		i++;
 	}
 	return (0);
 }
-// #include <stdio.h>
 
 // int	main(void)
 // {
-// 	printf("%d", ft_strncmp("asd", "asf", 3));
+// 	printf("%d", strncmp("asd", NULL, 3));
+// 	// printf("%d", ft_strncmp("asd", NULL, 3));
 // }
