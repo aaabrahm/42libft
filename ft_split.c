@@ -58,13 +58,13 @@ char **ft_split(char const *s, char c)
 		return 0;
 	while (i < n)
 	{
+		while (*s1 == c && *s1++)
+			;
+		s = s1;
 		while (*s1 != c && *s1++)
 			;
 		t[i++] = ft_substr(s, 0, s1 - s);
 		check_free(&t, i);
-		while (*s1 == c && *s1++)
-			;
-		s = s1;
 	}
 	return (t);
 }
