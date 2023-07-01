@@ -14,36 +14,27 @@
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	int		i;
-	int		j;
-	char	*start;
-	char	*f;
-	char	*q;
+	char const	*f;
+	char		*q;
 
-	i = 0;
-	while (s1[i] == set[i] && set[i])
-		i++;
-	start = (char *)s1;
-	if (set[i] == 0)
-		start += i;
-	i = ft_strlen(set);
-	j = ft_strlen(s1);
-	f = (char *)s1 + j;
-	while (j >= 0 && i >= 0 && set[i--] == s1[j])
-		j--;
-	if (i == -1)
+	if (*set)
 	{
-		f -= ft_strlen(set);
+		while (ft_strchr(set, *s1))
+			s1++;
+		f = (char *)s1 + ft_strlen(s1) - 1;
+		while (ft_strchr(set, *f))
+			f--;
 	}
-	i = 0;
-	q = ft_calloc(f - start + 1, 1);
+	else
+		f = s1 + ft_strlen(s1) - 1;
+	q = ft_calloc(f - s1 + 1, 1);
 	if (q)
-		ft_strlcat(q, start, f - start + 1);
+		ft_strlcat(q, s1, f - s1 + 2);
 	return (q);
 }
 
 // int	main(void)
 // {
 // 	// char s[] = "aaissssoooopp";
-// 	printf("%s", ft_strtrim("hello world", "world"));
+// 	printf("%s\n", ft_strtrim("hello world", "world"));
 // }

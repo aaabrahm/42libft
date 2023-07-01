@@ -28,8 +28,8 @@ char	*ft_strrchr(const char *s, int c)
 	return (p);
 }
 
-#include <stdio.h>
-#include <string.h>
+// #include <stdio.h>
+// #include <string.h>
 
 // int	main(void)
 // {

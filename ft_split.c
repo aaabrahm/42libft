@@ -12,26 +12,15 @@
 
 #include "libft.h"
 
-int	check(char c, char *charset)
+static int get_n(char const *str, char c, int *a, char const **s)
 {
-	if (c == 0)
-		return (1);
-	while (*charset)
-	{
-		if (c == *charset)
-			return (1);
-		charset++;
-	}
-	return (0);
-}
-
-int	get_n(char const *str, char c)
-{
-	int	f;
-	int	i;
+	int f;
+	int i;
 
 	f = 1;
 	i = 0;
+	*a = 0;
+	*s = str;
 	while (*str)
 	{
 		if (*str != c && f)
@@ -41,43 +30,41 @@ int	get_n(char const *str, char c)
 		}
 		else if (*str == c && f == 0)
 			f = 1;
+		str++;
 	}
-	return (c);
-}
-
-int	ft_strlen_1(char *str, char *charset)
-{
-	int	i;
-
-	i = 0;
-	while (check(str[i], charset) == 0)
-		i++;
 	return (i);
 }
 
-char	**ft_split(char const *s, char c)
+static int check_free(char ***t, int i)
 {
-	char **c;
+	if ((*t)[i - 1])
+		return 0;
+	while (i-- > 1)
+		free((*t)[i - 1]);
+	free(*t);
+	return 1;
+}
+
+char **ft_split(char const *s, char c)
+{
+	char **t;
 	int n;
 	int i;
-	int j;
+	char const *s1;
 
-	n = get_n(s, c);
-	c = malloc(sizeof(char *) * (n + 1));
+	n = get_n(s, c, &i, &s1);
+	t = malloc(sizeof(char *) * (n + 1));
+	if (t == 0)
+		return 0;
 	while (i < n)
 	{
-		while (check(*str, charset))
-			str++;
-		j = 0;
-		c[i] = malloc(ft_strlen_1(str, charset) + 1);
-		while (check(*str, charset) == 0)
-		{
-			c[i][j++] = *str;
-			str++;
-		}
-		c[i][j] = 0;
-		i++;
+		while (*s1 != c && *s1++)
+			;
+		t[i++] = ft_substr(s, 0, s1 - s);
+		check_free(&t, i);
+		while (*s1 == c && *s1++)
+			;
+		s = s1;
 	}
-	c[i] = NULL;
-	return (c);
+	return (t);
 }
