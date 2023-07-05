@@ -6,7 +6,7 @@
 /*   By: owatanab <owatanab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 13:34:52 by owatanab          #+#    #+#             */
-/*   Updated: 2023/06/25 19:48:07 by owatanab         ###   ########.fr       */
+/*   Updated: 2023/07/05 19:48:33 by owatanab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,11 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	if (*set)
 	{
-		while (ft_strchr(set, *s1))
+		while (ft_strchr(set, *s1) && *s1)
 			s1++;
+		if (*s1 == '\0')
+			return ((char *)ft_calloc(1, 1));
+		printf("%d", *s1);
 		f = (char *)s1 + ft_strlen(s1) - 1;
 		while (ft_strchr(set, *f))
 			f--;
@@ -36,5 +39,5 @@ char	*ft_strtrim(char const *s1, char const *set)
 // int	main(void)
 // {
 // 	// char s[] = "aaissssoooopp";
-// 	printf("%s\n", ft_strtrim("hello world", "world"));
+// 	printf("%s\n", ft_strtrim("hello world", "abcdefghijklmnopqrstuvwxy z"));
 // }

@@ -6,16 +6,16 @@
 /*   By: owatanab <owatanab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/25 18:34:09 by owatanab          #+#    #+#             */
-/*   Updated: 2023/06/25 18:49:05 by owatanab         ###   ########.fr       */
+/*   Updated: 2023/07/05 18:22:43 by owatanab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int get_n(char const *str, char c, int *a, char const **s)
+static int	get_n(char const *str, char c, int *a, char const **s)
 {
-	int f;
-	int i;
+	int	f;
+	int	i;
 
 	f = 1;
 	i = 0;
@@ -35,17 +35,17 @@ static int get_n(char const *str, char c, int *a, char const **s)
 	return (i);
 }
 
-static int check_free(char ***t, int i)
+static int	check_free(char ***t, int i)
 {
 	if ((*t)[i - 1])
-		return 0;
+		return (0);
 	while (i-- > 1)
 		free((*t)[i - 1]);
 	free(*t);
-	return 1;
+	return (1);
 }
 
-char **ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	char **t;
 	int n;
@@ -55,7 +55,7 @@ char **ft_split(char const *s, char c)
 	n = get_n(s, c, &i, &s1);
 	t = malloc(sizeof(char *) * (n + 1));
 	if (t == 0)
-		return 0;
+		return (0);
 	while (i < n)
 	{
 		while (*s1 == c && *s1++)
@@ -66,5 +66,6 @@ char **ft_split(char const *s, char c)
 		t[i++] = ft_substr(s, 0, s1 - s);
 		check_free(&t, i);
 	}
+	t[n] = 0;
 	return (t);
 }

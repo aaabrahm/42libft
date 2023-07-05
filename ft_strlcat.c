@@ -6,13 +6,13 @@
 /*   By: owatanab <owatanab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/21 18:40:14 by owatanab          #+#    #+#             */
-/*   Updated: 2023/06/25 15:56:40 by owatanab         ###   ########.fr       */
+/*   Updated: 2023/07/05 18:29:07 by owatanab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *restrict dest, const char *restrict src, size_t size)
+size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
 	size_t	i;
 	size_t	j;

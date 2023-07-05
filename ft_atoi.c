@@ -6,13 +6,13 @@
 /*   By: owatanab <owatanab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 12:09:18 by owatanab          #+#    #+#             */
-/*   Updated: 2023/06/25 16:43:40 by owatanab         ###   ########.fr       */
+/*   Updated: 2023/07/05 18:40:14 by owatanab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(char *str)
+int	ft_atoi(const char *str)
 {
 	int				i;
 	unsigned long	j;

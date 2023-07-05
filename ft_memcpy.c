@@ -6,13 +6,13 @@
 /*   By: owatanab <owatanab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/21 18:14:16 by owatanab          #+#    #+#             */
-/*   Updated: 2023/06/25 13:25:08 by owatanab         ###   ########.fr       */
+/*   Updated: 2023/07/05 18:30:21 by owatanab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
 	size_t	i;
 	char	*s;
