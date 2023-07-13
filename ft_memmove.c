@@ -6,7 +6,7 @@
 /*   By: owatanab <owatanab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 10:10:27 by owatanab          #+#    #+#             */
-/*   Updated: 2023/06/25 15:41:38 by owatanab         ###   ########.fr       */
+/*   Updated: 2023/07/13 19:40:58 by owatanab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	char	*s;
 	char	*t;
 
+	if (dst == NULL && src == NULL)
+		return NULL;
 	s = dst;
 	t = (char *)src;
 	if (s < t)
@@ -39,8 +41,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 
 // int	main(void)
 // {
-// 	char s[] = "sdfffddd";
-// 	char t[] = "cjj";
-// 	printf("%s%s\n", ft_memmove(s, t, 6), s);
-// 	printf("%s%s", memmove(s, t, 6), s);
+// 	char *s = NULL;
+// 	char *t = NULL;
+// 	printf("%s", ft_memmove(s, t, 2));
 // }

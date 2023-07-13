@@ -6,7 +6,7 @@
 /*   By: owatanab <owatanab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 12:27:33 by owatanab          #+#    #+#             */
-/*   Updated: 2023/07/05 19:21:13 by owatanab         ###   ########.fr       */
+/*   Updated: 2023/07/13 19:10:49 by owatanab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,14 @@ char	*ft_strdup(const char *s1)
 	char	*p;
 	size_t	i;
 
-	i = 0;
-	while (s1[i])
-		i++;
+	i = ft_strlen(s1);
 	p = malloc(i + 1);
-	p[i] = 0;
 	if (p)
 	{
 		while (i--)
 			p[i] = s1[i];
 	}
+	p[ft_strlen(s1)] = 0;
 	return (p);
 }
 

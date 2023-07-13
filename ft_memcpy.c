@@ -6,7 +6,7 @@
 /*   By: owatanab <owatanab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/21 18:14:16 by owatanab          #+#    #+#             */
-/*   Updated: 2023/07/05 18:30:21 by owatanab         ###   ########.fr       */
+/*   Updated: 2023/07/13 19:31:12 by owatanab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,17 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
 	size_t	i;
 	char	*s;
+	char	*t;
 
-	char *restrict t;
-	i = -1;
+	if(dst == NULL && src == NULL)
+		return NULL;
+	i = 0;
 	s = dst;
-	t = (char *restrict)src;
-	while (++i < n)
+	t = (char *)src;
+	while (i < n){
 		s[i] = t[i];
+		i++;
+	}
 	return (dst);
 }
 
@@ -31,7 +35,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 
 // int	main(void)
 // {
-// 	char s[] = "sdfsd";
+// 	char *s = NULL;
 // 	char t[] = "as";
 // 	printf("%s", ft_memcpy(s, t, 3));
 // 	char s1[] = "sdfsd";

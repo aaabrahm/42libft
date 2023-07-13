@@ -6,7 +6,7 @@
 /*   By: owatanab <owatanab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 10:20:40 by owatanab          #+#    #+#             */
-/*   Updated: 2023/06/25 14:15:11 by owatanab         ###   ########.fr       */
+/*   Updated: 2023/07/13 18:28:21 by owatanab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 size_t	ft_strlcpy(char *dest, char *src, size_t size)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	while (i + 1 < size && src[i] != 0)
