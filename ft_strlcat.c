@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: owatanab <owatanab@student.42.fr>          +#+  +:+       +#+        */
+/*   By: otawatanabe <otawatanabe@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/21 18:40:14 by owatanab          #+#    #+#             */
-/*   Updated: 2023/07/13 19:44:44 by owatanab         ###   ########.fr       */
+/*   Updated: 2023/07/24 19:09:55 by otawatanabe      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 	size_t	i;
 	size_t	j;
 
+	if (dest == 0 && size == 0)
+		return ft_strlen(src);
 	j = 0;
 	i = ft_strlen((char *)dest);
 	if (i >= size)

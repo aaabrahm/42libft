@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: owatanab <owatanab@student.42.fr>          +#+  +:+       +#+        */
+/*   By: otawatanabe <otawatanabe@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 12:27:33 by owatanab          #+#    #+#             */
-/*   Updated: 2023/07/13 19:10:49 by owatanab         ###   ########.fr       */
+/*   Updated: 2023/07/24 19:12:12 by otawatanabe      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ char	*ft_strdup(const char *s1)
 	{
 		while (i--)
 			p[i] = s1[i];
+			p[ft_strlen(s1)] = 0;
 	}
-	p[ft_strlen(s1)] = 0;
 	return (p);
 }
 
