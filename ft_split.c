@@ -6,13 +6,13 @@
 /*   By: owatanab <owatanab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/25 18:34:09 by owatanab          #+#    #+#             */
-/*   Updated: 2023/07/13 18:30:58 by owatanab         ###   ########.fr       */
+/*   Updated: 2023/07/25 16:39:19 by owatanab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	get_n(char const *str, char c, int *a, char const **s)
+static int	get_n(char const *str, char c, size_t *a, char const **s)
 {
 	int	f;
 	int	i;
@@ -48,8 +48,8 @@ static int	check_free(char ***t, int i)
 char	**ft_split(char const *s, char c)
 {
 	char		**t;
-	int			n;
-	int			i;
+	size_t		n;
+	size_t		i;
 	char const	*s1;
 
 	n = get_n(s, c, &i, &s1);

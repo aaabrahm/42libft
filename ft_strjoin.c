@@ -6,7 +6,7 @@
 /*   By: owatanab <owatanab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 13:11:56 by owatanab          #+#    #+#             */
-/*   Updated: 2023/07/13 18:59:16 by owatanab         ###   ########.fr       */
+/*   Updated: 2023/07/25 16:36:41 by owatanab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,15 @@
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*p;
-	int		i;
-	int		j;
+	size_t	i;
+	size_t	j;
 
 	p = ft_calloc(ft_strlen(s1) + ft_strlen(s2) + 1, 1);
 	if (p)
 	{
 		i = 0;
-		while (s1[i]){
+		while (s1[i])
+		{
 			p[i] = s1[i];
 			i++;
 		}

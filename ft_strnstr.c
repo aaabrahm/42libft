@@ -6,7 +6,7 @@
 /*   By: owatanab <owatanab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 11:34:45 by owatanab          #+#    #+#             */
-/*   Updated: 2023/07/13 17:47:05 by owatanab         ###   ########.fr       */
+/*   Updated: 2023/07/25 16:37:19 by owatanab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	size_t	i;
-	int		j;
+	size_t	j;
 
 	j = 0;
 	i = 0;

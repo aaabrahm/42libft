@@ -6,7 +6,7 @@
 /*   By: owatanab <owatanab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 10:10:27 by owatanab          #+#    #+#             */
-/*   Updated: 2023/07/13 19:40:58 by owatanab         ###   ########.fr       */
+/*   Updated: 2023/07/25 16:11:34 by owatanab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	char	*t;
 
 	if (dst == NULL && src == NULL)
-		return NULL;
+		return (NULL);
 	s = dst;
 	t = (char *)src;
 	if (s < t)

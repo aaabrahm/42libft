@@ -6,7 +6,7 @@
 /*   By: owatanab <owatanab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/21 17:39:32 by owatanab          #+#    #+#             */
-/*   Updated: 2023/07/13 17:42:42 by owatanab         ###   ########.fr       */
+/*   Updated: 2023/07/25 16:49:55 by owatanab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	int		i;
+	size_t	i;
 	char	*a;
 
 	a = s;

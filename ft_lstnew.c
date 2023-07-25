@@ -1,23 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: owatanab <owatanab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/01 19:34:48 by owatanab          #+#    #+#             */
-/*   Updated: 2023/07/25 16:36:59 by owatanab         ###   ########.fr       */
+/*   Created: 2023/07/25 18:09:20 by owatanab          #+#    #+#             */
+/*   Updated: 2023/07/25 18:21:24 by owatanab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlen(const char *str)
+t_list *ft_lstnew(void *content)
 {
-	size_t	i;
+	t_list	*n;
 
-	i = 0;
-	while (str[i] != 0)
-		i++;
-	return (i);
+	n = malloc(sizeof(t_list));
+	(t_list)content;
 }

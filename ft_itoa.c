@@ -6,7 +6,7 @@
 /*   By: owatanab <owatanab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 18:34:59 by owatanab          #+#    #+#             */
-/*   Updated: 2023/07/13 18:38:43 by owatanab         ###   ########.fr       */
+/*   Updated: 2023/07/25 16:34:05 by owatanab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static int	count_size(int n)
 char	*ft_itoa(int n)
 {
 	char	*p;
-	int		c;
+	size_t	c;
 
 	c = count_size(n);
 	p = ft_calloc(c + 1, 1);
